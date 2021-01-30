@@ -1,0 +1,32 @@
+    // Kullanıcıdan satır sayısı almak için Scanner sınıfını ekliyoruz.
+    import java.util.Scanner;
+    
+    public static void main(String[] args) { // Main methodu    
+        Scanner scan;
+        scan = new Scanner(System.in);
+        System.out.print("Piramit oluşturmak için satır sayısı girin : "); // Kullanıcıdan Piramit için satır sayısı istediğimizi bildiriyoruz.
+        int GirilenSayi = scan.nextInt();   //  Kullanıcıdan satır sayısını aldık.
+        piramid(GirilenSayi); // piramid methodumuzu çağırdık.
+    }
+
+    public static void piramid(int SatirSayisi) {  // Piramid methodumuz
+        int BoslukSayisi = 1; // Üst satırlar için boşluk sayısını tuttuğumuz değişken
+        int YildizSayisi = 1; // Satır içinde kullanılan yıldız sayısını tuttuğumuz değişken
+        int Satir = 1;  // Hangi satırda olduğumuzu tuttuğumuz değişken
+
+        while (Satir <= SatirSayisi) {  // Kullanıcıdan aldığımız satır sayısına ulaşana kadar While ile döngü oluşturuyoruz.
+            while ((SatirSayisi - Satir) >= BoslukSayisi) {   // Boşluk sayısını kontrol ediyoruz.
+                System.out.print(" ");  // satır sayısına ulaşana kadar boşluk ekliyoruz ki yıldız ortalanmış olsun sola yaslı olmasın.
+                BoslukSayisi++;
+            }
+
+            while (YildizSayisi <= Satir+ (Satir-1)) { // Yeterli miktarda boşluk ekleyince belirli sayıda yıldız ekliyoruz.
+                System.out.print("*");
+                YildizSayisi++;
+            } 
+            System.out.println();   // alt satıra geçiyoruz.
+            BoslukSayisi = 1;       // Boşluk sayısını tekrar 1'e eşitliyoruz.
+            YildizSayisi = 1;       // Yıldız sayısını tekrar 1'e eşitliyoruz.
+            Satir++;                // Satır sayımızı arttırıyoruz.
+        }
+    }
