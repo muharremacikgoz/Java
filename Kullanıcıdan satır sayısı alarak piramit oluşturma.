@@ -24,7 +24,7 @@
                 System.out.print("*");
                 YildizSayisi++;
             } 
-            System.out.println();   // alt satıra geçiyoruz.
+            System.out.println();   // Alt satıra geçiyoruz.
             BoslukSayisi = 1;       // Boşluk sayısını tekrar 1'e eşitliyoruz.
             YildizSayisi = 1;       // Yıldız sayısını tekrar 1'e eşitliyoruz.
             Satir++;                // Satır sayımızı arttırıyoruz.
